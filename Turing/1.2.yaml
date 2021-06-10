@@ -1,0 +1,42 @@
+name: '1.2'
+source code: |
+  input: '110λ01λ1λ01'
+  blank: ' '
+  start state: q01
+  table:
+    q01:
+      [1,0,λ]: {R: q02}
+    q02:
+      [1,0,λ]: {R: q03}
+    q03:
+      [1,0,λ]: {R: q04}
+    q04:
+      [1,0,λ]: {R: q1}
+    q1:
+      1: {write: λ, R}
+      0: {write: 1, R}
+      λ: {R: q2}
+    q2:
+      1: {R: q3}
+      0: {R: q3}
+      λ: {R: q3}
+    q3:
+      1: {write: λ, R: q4}
+      0: {write: 1, R: q4}
+      λ: {R: q4}
+    q4:
+      1: L
+      0: {L: q1}
+      λ: {R: qz}
+    qz:
+      
+positions:
+  q01: {x: 542.15, y: 384.48, fixed: false}
+  q02: {x: 597.39, y: 250.25, fixed: false}
+  q03: {x: 543.38, y: 114.95}
+  q04: {x: 444.18, y: 233.7, fixed: false}
+  q1: {x: 307.5, y: 294.83, fixed: false}
+  q2: {x: 358.98, y: 160.96, fixed: false}
+  q3: {x: 253.7, y: 68.47}
+  q4: {x: 174.87, y: 222.76}
+  qz: {x: 156.95, y: 363.04}

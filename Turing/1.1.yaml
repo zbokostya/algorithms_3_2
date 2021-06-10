@@ -1,0 +1,30 @@
+name: '1.1'
+source code: |
+  input: '11λ01101'
+  blank: ' '
+  start state: q01
+  table:
+    q01:
+      [1,0,λ]: {R: q02}
+    q02:
+      [1,0,λ]: {R: q03}
+    q03:
+      [1,0,λ]: {R: q04}
+    q04:
+      [1,0,λ]: {R: q05}
+    q05:
+      [1,0,λ]: {R: q1}
+    q1:
+      1: {write: 0, R}
+      0: {write: 1, R}
+      λ : {write: 1, L: qz}
+    qz:
+      
+positions:
+  q01: {x: 542.88, y: 151.16, fixed: false}
+  q02: {x: 571.07, y: 292.04, fixed: false}
+  q03: {x: 452.91, y: 370.88, fixed: false}
+  q04: {x: 403.94, y: 234.68, fixed: false}
+  q05: {x: 298.35, y: 138.56, fixed: false}
+  q1: {x: 183.86, y: 226.66}
+  qz: {x: 286.48, y: 353.66}
